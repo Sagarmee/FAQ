@@ -1,7 +1,5 @@
-import logo from "./logo.svg";
 import "./App.css";
 import Faqlist from "./components/Faqlist";
-import { useState } from "react";
 
 const FAQ = [
   {
