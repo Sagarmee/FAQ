@@ -1,0 +1,56 @@
+import logo from "./logo.svg";
+import "./App.css";
+import Faqlist from "./components/Faqlist";
+import { useState } from "react";
+
+const FAQ = [
+  {
+    question: "what is an esim?",
+    answer:
+      "An eSIM (embedded SIM) is a digital SIM card built directly into your device. It allows you to activate cellular plans digitally without needing a physical SIM card.",
+  },
+  {
+    question: "which devices support esim?",
+    answer:
+      "Many modern smartphones support eSIM, including recent iPhone models (iPhone XS and newer), Google Pixel phones, Samsung Galaxy devices, and select iPads.",
+  },
+  {
+    question: "can i use both esim and physical sim simultaneously?",
+    answer:
+      "Yes, most eSIM-compatible devices support Dual SIM functionality, allowing you to use both an eSIM and a physical SIM card at the same time.",
+  },
+  {
+    question: "how do i activate an esim?",
+    answer:
+      "To activate an eSIM, you typically scan a QR code provided by your carrier or enter the activation details manually in your device settings.",
+  },
+  {
+    question: "what are the benefits of using an esim?",
+    answer:
+      "eSIMs offer several benefits: easy switching between carriers, no physical SIM card needed, ability to store multiple profiles, and environmentally friendly",
+  },
+  {
+    question: "Data for Faq",
+    answer: `"heading": "Esim FAQ", "faq1id": "esim-what", "faq1title": "What is an eSIM?", "faq1content": "An eSIM (embedded SIM) is a digital SIM card built directly into your device. It allows you to activate cellular plans digitally without needing a physical SIM card.", "faq2id": "esim-devices", "faq2title": "Which devices support eSIM?", "faq2content": "Many modern smartphones support eSIM, including recent iPhone models (iPhone XS and newer), Google Pixel phones, Samsung Galaxy devices, and select iPads.", "faq3id": "esim-dual", "faq3title": "Can I use both eSIM and physical SIM simultaneously?", "faq3content": "Yes, most eSIM-compatible devices support Dual SIM functionality, allowing you to use both an eSIM and a physical SIM card at the same time.", "faq4id": "esim-activation", "faq4title": "How do I activate an eSIM?", "faq4content": "To activate an eSIM, you typically scan a QR code provided by your carrier or enter the activation details manually in your device settings.", "faq5id": "esim-benefits", "faq5title": "What are the advantages of using an eSIM?", "faq5content": "eSIMs offer several benefits: easy switching between carriers, no physical SIM card needed, ability to store multiple profiles, and environmentally friendly." }`,
+  },
+];
+
+
+
+function App() {
+
+  return (
+    <div className="App">
+      <header className="App-header">
+        <h2>ESim FAQ</h2>
+        {FAQ.map((item, index) => (
+          <div key={index} style={{width:"80%",marginBottom:"5px"}}>
+            <Faqlist question={item.question} answer={item.answer} index={index} />
+          </div>
+        ))}
+      </header>
+    </div>
+  );
+}
+
+export default App;
